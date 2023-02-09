@@ -104,7 +104,7 @@
   </div><main id="main-content" class="astro-VJ4TPSPI">
     <h1 class="post-title astro-VJ4TPSPI">SwiftLet 05: Closures</h1>
     <h3 class="author astro-VJ4TPSPI">by: 0xLeif</h3>
-    <div class="flex items-center space-x-2 opacity-80 my-2 astro-VJ4TPSPI"><svg xmlns="http://www.w3.org/2000/svg" class="scale-100 inline-block h-6 w-6 fill-skin-base" aria-hidden="true"><path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path></svg><span class="sr-only">Posted on:</span><span class="italic text-base">June 6, 2022<span aria-hidden="true"> | </span><span class="sr-only"> at </span>04:06 AM</span></div>
+    <div class="flex items-center space-x-2 opacity-80 my-2 astro-VJ4TPSPI"><svg xmlns="http://www.w3.org/2000/svg" class="scale-100 inline-block h-6 w-6 fill-skin-base" aria-hidden="true"><path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path></svg><span class="sr-only">Posted on:</span><span class="italic text-base">November 30, 2021<span aria-hidden="true"> | </span><span class="sr-only"> at </span>04:06 AM</span></div>
     <article id="article" role="article" class="prose mx-auto mt-8 max-w-3xl astro-VJ4TPSPI">
       <h1 id="swiftlet-05-closures">SwiftLet #05: Closures</h1>
 <p><em>Input and Output</em></p>
@@ -126,7 +126,7 @@ The most basic Closure type you can have is one that doesn’t take any paramete
 <span class="line"></span>
 <span class="line"><span style="color: #56B6C2">print</span><span style="color: #ABB2BF">(</span><span style="color: #61AFEF">closure</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">3</span><span style="color: #ABB2BF">)) </span><span style="color: #7F848E">// 🧱🧱🧱</span></span>
 <span class="line"><span style="color: #56B6C2">print</span><span style="color: #ABB2BF">(</span><span style="color: #61AFEF">function</span><span style="color: #ABB2BF">(</span><span style="color: #61AFEF">times</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">3</span><span style="color: #ABB2BF">)) </span><span style="color: #7F848E">// 🧱🧱🧱</span></span></code></pre>
-<p>Notice that the function has the same Closure type except that it has a named parameter <code>(times: Int) -> String</code>.  To show this we can have another function that has a parameter of <code>(Int) -> String</code>.</p>
+<p>Notice that the function has the same Closure type except that it has a named parameter <code>(times: Int) -> String</code>. To show this we can have another function that has a parameter of <code>(Int) -> String</code>.</p>
 <pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #C678DD">let</span><span style="color: #ABB2BF"> closure: (</span><span style="color: #E5C07B">Int</span><span style="color: #ABB2BF">) -> </span><span style="color: #E5C07B">String</span></span>
 <span class="line"></span>
 <span class="line"><span style="color: #ABB2BF">closure = { times </span><span style="color: #C678DD">in</span></span>
