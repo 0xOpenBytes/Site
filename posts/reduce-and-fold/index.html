@@ -1,0 +1,341 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width">
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg">
+    <link rel="canonical" href="https://astro-paper.pages.dev/posts/reduce-and-fold/">
+    <meta name="generator" content="Astro v2.0.9">
+
+    <!-- General Meta Tags -->
+    <title>Reduce and Fold</title>
+    <meta name="title" content="Reduce and Fold">
+    <meta name="description" content="An introduction to Kotlin's `reduce` and `fold` functions, along with some use cases.">
+    <meta name="author" content="Parshav">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:title" content="Reduce and Fold">
+    <meta property="og:description" content="An introduction to Kotlin's `reduce` and `fold` functions, along with some use cases.">
+    <meta property="og:url" content="https://astro-paper.pages.dev/posts/reduce-and-fold/">
+    <meta property="og:image" content="https://astro-paper.pages.dev/Reduce%20and%20Fold.svg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://astro-paper.pages.dev/posts/reduce-and-fold/">
+    <meta property="twitter:title" content="Reduce and Fold">
+    <meta property="twitter:description" content="An introduction to Kotlin's `reduce` and `fold` functions, along with some use cases.">
+    <meta property="twitter:image" content="https://astro-paper.pages.dev/astropaper-og.jpg">
+
+    <!-- Google Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,400;0,500;0,600;0,700;1,400;1,600&display=swap" rel="stylesheet">
+
+    
+
+    <script src="/toggle-theme.js"></script>
+  <link rel="stylesheet" href="/_astro/about.f6571c5c.css" />
+<link rel="stylesheet" href="/_astro/about.9dee87f4.css" />
+<link rel="stylesheet" href="/_astro/_slug_.faea2550.css" />
+<link rel="stylesheet" href="/_astro/_slug_.77dedcfe.css" />
+<link rel="stylesheet" href="/_astro/_slug_.5d5f7e01.css" />
+<link rel="stylesheet" href="/_astro/_slug_.d833ca2a.css" /><script type="module">const e=document.querySelector(".hamburger-menu"),n=document.querySelector("#menu-items")?.classList,t=document.querySelector(".icon-container")?.classList,o=document.querySelector("#first-line")?.classList,a=document.querySelector("#second-line ")?.classList,s=document.querySelector("#third-line")?.classList;e?.addEventListener("click",function(){e?.getAttribute("aria-expanded")==="false"?(e?.setAttribute("aria-expanded","true"),e?.setAttribute("aria-label","Close Menu"),n?.remove("display-none"),t?.remove("flex"),t?.add("relative"),o?.add("rotate-45","absolute","bottom-1/2"),s?.add("display-none"),a?.add("!w-full","-rotate-45","absolute","bottom-1/2")):(e?.setAttribute("aria-expanded","false"),e?.setAttribute("aria-label","Open Menu"),n?.add("display-none"),t?.add("flex"),t?.remove("relative"),o?.remove("rotate-45","absolute","bottom-1/2"),s?.remove("display-none"),a?.remove("!w-full","-rotate-45","absolute","bottom-1/2"))});
+</script></head>
+  <body>
+    <header class="astro-3EF6KSR2">
+  <a id="skip-to-content" href="#main-content" class="astro-3EF6KSR2">Skip to content</a>
+  <div class="nav-container astro-3EF6KSR2">
+    <div class="top-nav-wrap astro-3EF6KSR2">
+      <a href="/" class="logo astro-3EF6KSR2">
+        0xOpenBytes
+      </a>
+      <nav id="nav-menu" class="astro-3EF6KSR2">
+        <button class="hamburger-menu focus-outline astro-3EF6KSR2" aria-label="Open Menu" aria-expanded="false" aria-controls="menu-items">
+          <div class="icon-container flex astro-3EF6KSR2">
+            <div id="first-line" class="astro-3EF6KSR2"></div>
+            <div id="second-line" class="astro-3EF6KSR2"></div>
+            <div id="third-line" class="astro-3EF6KSR2"></div>
+          </div>
+        </button>
+        <ul id="menu-items" class="display-none sm:flex astro-3EF6KSR2">
+          <li class="astro-3EF6KSR2">
+            <a href="/posts" class=" astro-3EF6KSR2">
+              Posts
+            </a>
+          </li>
+          <li class="astro-3EF6KSR2">
+            <a href="/tags" class=" astro-3EF6KSR2">
+              Tags
+            </a>
+          </li>
+          <li class="astro-3EF6KSR2">
+            <a href="/about" class=" astro-3EF6KSR2">
+              About
+            </a>
+          </li>
+          <li class="astro-3EF6KSR2">
+            <a type="button" href="/search" tabindex="0" class="group focus-outline p-3 sm:p-1  astro-3EF6KSR2 astro-5EUNQZKT" aria-label="search" title="Search">
+  <svg xmlns="http://www.w3.org/2000/svg" class="scale-125 sm:scale-100 astro-3EF6KSR2"><path d="M19.023 16.977a35.13 35.13 0 0 1-1.367-1.384c-.372-.378-.596-.653-.596-.653l-2.8-1.337A6.962 6.962 0 0 0 16 9c0-3.859-3.14-7-7-7S2 5.141 2 9s3.14 7 7 7c1.763 0 3.37-.66 4.603-1.739l1.337 2.8s.275.224.653.596c.387.363.896.854 1.384 1.367l1.358 1.392.604.646 2.121-2.121-.646-.604c-.379-.372-.885-.866-1.391-1.36zM9 14c-2.757 0-5-2.243-5-5s2.243-5 5-5 5 2.243 5 5-2.243 5-5 5z" class="astro-3EF6KSR2"></path>
+              </svg>
+</a>
+          </li>
+          <li class="astro-3EF6KSR2">
+            <button id="theme-btn" class="focus-outline astro-3EF6KSR2" title="Toggles light & dark" aria-label="auto" aria-live="polite">
+                  <svg xmlns="http://www.w3.org/2000/svg" id="moon-svg" class="astro-3EF6KSR2">
+                    <path d="M20.742 13.045a8.088 8.088 0 0 1-2.077.271c-2.135 0-4.14-.83-5.646-2.336a8.025 8.025 0 0 1-2.064-7.723A1 1 0 0 0 9.73 2.034a10.014 10.014 0 0 0-4.489 2.582c-3.898 3.898-3.898 10.243 0 14.143a9.937 9.937 0 0 0 7.072 2.93 9.93 9.93 0 0 0 7.07-2.929 10.007 10.007 0 0 0 2.583-4.491 1.001 1.001 0 0 0-1.224-1.224zm-2.772 4.301a7.947 7.947 0 0 1-5.656 2.343 7.953 7.953 0 0 1-5.658-2.344c-3.118-3.119-3.118-8.195 0-11.314a7.923 7.923 0 0 1 2.06-1.483 10.027 10.027 0 0 0 2.89 7.848 9.972 9.972 0 0 0 7.848 2.891 8.036 8.036 0 0 1-1.484 2.059z" class="astro-3EF6KSR2"></path>
+                  </svg>
+                  <svg xmlns="http://www.w3.org/2000/svg" id="sun-svg" class="astro-3EF6KSR2">
+                    <path d="M6.993 12c0 2.761 2.246 5.007 5.007 5.007s5.007-2.246 5.007-5.007S14.761 6.993 12 6.993 6.993 9.239 6.993 12zM12 8.993c1.658 0 3.007 1.349 3.007 3.007S13.658 15.007 12 15.007 8.993 13.658 8.993 12 10.342 8.993 12 8.993zM10.998 19h2v3h-2zm0-17h2v3h-2zm-9 9h3v2h-3zm17 0h3v2h-3zM4.219 18.363l2.12-2.122 1.415 1.414-2.12 2.122zM16.24 6.344l2.122-2.122 1.414 1.414-2.122 2.122zM6.342 7.759 4.22 5.637l1.415-1.414 2.12 2.122zm13.434 10.605-1.414 1.414-2.122-2.122 1.414-1.414z" class="astro-3EF6KSR2"></path>
+                  </svg>
+                </button>
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </div>
+  <div class="max-w-3xl mx-auto px-4">
+  <hr class="border-skin-line" aria-hidden="true">
+</div>
+</header><div class="mx-auto flex w-full max-w-3xl justify-start px-2 astro-VJ4TPSPI">
+    <button class="focus-outline mt-8 mb-2 flex hover:opacity-75 astro-VJ4TPSPI" onclick="history.back()">
+      <svg xmlns="http://www.w3.org/2000/svg" class="astro-VJ4TPSPI"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" class="astro-VJ4TPSPI"></path>
+      </svg><span class="astro-VJ4TPSPI">Go back</span>
+    </button>
+  </div><main id="main-content" class="astro-VJ4TPSPI">
+    <h1 class="post-title astro-VJ4TPSPI">Reduce and Fold</h1>
+    <h3 class="author astro-VJ4TPSPI">by: Parshav</h3>
+    <div class="flex items-center space-x-2 opacity-80 my-2 astro-VJ4TPSPI"><svg xmlns="http://www.w3.org/2000/svg" class="scale-100 inline-block h-6 w-6 fill-skin-base" aria-hidden="true"><path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path></svg><span class="sr-only">Posted on:</span><span class="italic text-base">December 20, 2021<span aria-hidden="true"> | </span><span class="sr-only"> at </span>12:00 PM</span></div>
+    <article id="article" role="article" class="prose mx-auto mt-8 max-w-3xl astro-VJ4TPSPI">
+      <br>
+<h1 id="reduce-and-fold">Reduce and Fold</h1>
+<br>
+<p><code>reduce</code> and <code>fold</code> are functions for <code>Iterable</code> types in Kotlin that are used for accumulating values.</p>
+<p>A simple example where we add numbers from 0 till 4. Typically we would write something like</p>
+<br>
+<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #C678DD">@Test</span></span>
+<span class="line"><span style="color: #C678DD">fun</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">`without`</span><span style="color: #ABB2BF">() {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">val</span><span style="color: #ABB2BF"> testList </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> (</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> until </span><span style="color: #D19A66">5</span><span style="color: #ABB2BF">).toList()</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">var</span><span style="color: #ABB2BF"> acc </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span></span>
+<span class="line"><span style="color: #ABB2BF">    testList.forEach {</span></span>
+<span class="line"><span style="color: #ABB2BF">        acc </span><span style="color: #56B6C2">+=</span><span style="color: #ABB2BF"> it</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">println</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"acc :: $acc"</span><span style="color: #ABB2BF">) </span><span style="color: #7F848E">// acc :: 10</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre>
+<br>
+<p>We maintain a variable <code>acc</code> that holds the accumulated value.</p>
+<p><code>reduce</code> and <code>fold</code> functions provide both an accumulated value, along with the current value for the loop. In the following example, <code>acc</code> and <code>i</code> are these values respectively. Once the iteration is complete, these functions return the final accumulated value.</p>
+<br>
+<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #C678DD">@Test</span></span>
+<span class="line"><span style="color: #C678DD">fun</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">`simple demonstration`</span><span style="color: #ABB2BF">() {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">val</span><span style="color: #ABB2BF"> testList </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> (</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> until </span><span style="color: #D19A66">5</span><span style="color: #ABB2BF">).toList()</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">val</span><span style="color: #ABB2BF"> fold </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> testList.fold(</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">) { acc, i </span><span style="color: #56B6C2">-></span></span>
+<span class="line"><span style="color: #ABB2BF">        acc </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> i</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">println</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"Fold :: $fold"</span><span style="color: #ABB2BF">) </span><span style="color: #7F848E">// Fold :: 10</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">val</span><span style="color: #ABB2BF"> reduce </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> testList.reduce { acc, i </span><span style="color: #56B6C2">-></span></span>
+<span class="line"><span style="color: #ABB2BF">        acc </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> i</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">println</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"Reduce :: $reduce"</span><span style="color: #ABB2BF">) </span><span style="color: #7F848E">// Reduce :: 10</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre>
+<br>
+<p>Similar, but only slightly.
+<br></p>
+<h2 id="difference">Difference</h2>
+<br>
+<p>Looking at our example, <code>reduce</code> does not explicitly provide a parameter to pass an initial value like <code>fold</code> does. It automatically uses the first item of the iterable type as the initial value.</p>
+<p>But why separate these two, and where would you use one over the other ?</p>
+<p><code>fold</code>’s initial value defines its return type, whereas <code>reduce</code> expects the accumulated value to remain of the same type as the iterable it is being applied to.</p>
+<p>Let’s say we wish to iterate over our <code>testList</code> containing the numbers 0 till 4, and simply return a string joining all these numbers. Using <code>fold</code> we could do something like</p>
+<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #C678DD">@Test</span></span>
+<span class="line"><span style="color: #C678DD">fun</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">`types difference`</span><span style="color: #ABB2BF">() {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">val</span><span style="color: #ABB2BF"> testList </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> (</span><span style="color: #D19A66">0</span><span style="color: #ABB2BF"> until </span><span style="color: #D19A66">5</span><span style="color: #ABB2BF">).toList()</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">val</span><span style="color: #ABB2BF"> fold </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> testList.fold(</span><span style="color: #98C379">""</span><span style="color: #ABB2BF">) { acc, i </span><span style="color: #56B6C2">-></span></span>
+<span class="line"><span style="color: #ABB2BF">        acc.plus(i)</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">println</span><span style="color: #ABB2BF">(fold)</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre>
+<p>where we provide an empty initial string as the first “accumulated” value, and our lamda appends the next number to the string.</p>
+<p><em>Changing the return type would not be possible in <code>reduce</code></em></p>
+<br>
+<h2 id="use-case">Use case</h2>
+<h3 id="reduce">reduce</h3>
+<br>
+<p>A user can add multiple items to their basket when shopping, and we wish to display a running total of the price of these items.</p>
+<p>An item is defined as ::</p>
+<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #C678DD">data</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">class</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">Item</span><span style="color: #ABB2BF">(</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">val</span><span style="color: #ABB2BF"> </span><span style="color: #ABB2BF">id</span><span style="color: #ABB2BF">: </span><span style="color: #E5C07B">Int</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">val</span><span style="color: #ABB2BF"> </span><span style="color: #ABB2BF">name</span><span style="color: #ABB2BF">: </span><span style="color: #E5C07B">String</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">val</span><span style="color: #ABB2BF"> </span><span style="color: #ABB2BF">price</span><span style="color: #ABB2BF">: </span><span style="color: #E5C07B">Int</span></span>
+<span class="line"><span style="color: #ABB2BF">)</span></span></code></pre>
+<br>
+<p>And to generate the price of items for a given list ::</p>
+<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #C678DD">@Test</span></span>
+<span class="line"><span style="color: #C678DD">fun</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">`reduce use case`</span><span style="color: #ABB2BF">() {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">val</span><span style="color: #ABB2BF"> items </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">listOf</span><span style="color: #ABB2BF">(</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">Item</span><span style="color: #ABB2BF">(</span></span>
+<span class="line"><span style="color: #ABB2BF">            id </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">            name </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"Orange"</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">            price </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">4</span></span>
+<span class="line"><span style="color: #ABB2BF">        ),</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">Item</span><span style="color: #ABB2BF">(</span></span>
+<span class="line"><span style="color: #ABB2BF">            id </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">1</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">            name </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"Milk"</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">            price </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">5</span></span>
+<span class="line"><span style="color: #ABB2BF">        ),</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">Item</span><span style="color: #ABB2BF">(</span></span>
+<span class="line"><span style="color: #ABB2BF">            id </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">            name </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"Expensive Potato"</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">            price </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">15</span></span>
+<span class="line"><span style="color: #ABB2BF">        )</span></span>
+<span class="line"><span style="color: #ABB2BF">    )</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">val</span><span style="color: #ABB2BF"> totalPrice </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> items</span></span>
+<span class="line"><span style="color: #ABB2BF">        .map { it.price }</span></span>
+<span class="line"><span style="color: #ABB2BF">        .reduce { acc, i </span><span style="color: #56B6C2">-></span><span style="color: #ABB2BF"> acc </span><span style="color: #56B6C2">+</span><span style="color: #ABB2BF"> i }</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">println</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"Total Price :: $totalPrice"</span><span style="color: #ABB2BF">) </span><span style="color: #7F848E">// prints Total Price :: 24</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre>
+<br>
+<h3 id="fold">fold</h3>
+<br>
+<p>Before we send data to our API, we perform client side validation to rid of any basic missing information. The object is complex, so we’ve created separate validators, each with their own concern.</p>
+<p>Our complex <code>user</code> model</p>
+<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #C678DD">data</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">class</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">UserModel</span><span style="color: #ABB2BF">(</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">val</span><span style="color: #ABB2BF"> </span><span style="color: #ABB2BF">id</span><span style="color: #ABB2BF">: </span><span style="color: #E5C07B">Int</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">val</span><span style="color: #ABB2BF"> </span><span style="color: #ABB2BF">name</span><span style="color: #ABB2BF">: </span><span style="color: #E5C07B">String</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">val</span><span style="color: #ABB2BF"> </span><span style="color: #ABB2BF">email</span><span style="color: #ABB2BF">: </span><span style="color: #E5C07B">String</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">val</span><span style="color: #ABB2BF"> </span><span style="color: #ABB2BF">zipCode</span><span style="color: #ABB2BF">: </span><span style="color: #E5C07B">Int</span></span>
+<span class="line"><span style="color: #ABB2BF">)</span></span></code></pre>
+<br>
+<p>Our validators for a <code>user</code></p>
+<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #C678DD">interface</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">Validator</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">fun</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">isValid</span><span style="color: #ABB2BF">(</span><span style="color: #ABB2BF">user</span><span style="color: #ABB2BF">: </span><span style="color: #E5C07B">UserModel</span><span style="color: #ABB2BF">): </span><span style="color: #E5C07B">Boolean</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C678DD">class</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">EmailValidator</span><span style="color: #ABB2BF"> : </span><span style="color: #E5C07B">Validator</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">override</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">fun</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">isValid</span><span style="color: #ABB2BF">(</span><span style="color: #ABB2BF">user</span><span style="color: #ABB2BF">: </span><span style="color: #E5C07B">UserModel</span><span style="color: #ABB2BF">): </span><span style="color: #E5C07B">Boolean</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> user.email.contains(</span><span style="color: #98C379">"@"</span><span style="color: #ABB2BF">)</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #C678DD">class</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">ZipCodeValidator</span><span style="color: #ABB2BF"> : </span><span style="color: #E5C07B">Validator</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">override</span><span style="color: #ABB2BF"> </span><span style="color: #C678DD">fun</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">isValid</span><span style="color: #ABB2BF">(</span><span style="color: #ABB2BF">user</span><span style="color: #ABB2BF">: </span><span style="color: #E5C07B">UserModel</span><span style="color: #ABB2BF">): </span><span style="color: #E5C07B">Boolean</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">return</span><span style="color: #ABB2BF"> user.zipCode </span><span style="color: #56B6C2">>=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">10_000</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre>
+<br>
+<p>And now lets run our validators on an invalid user</p>
+<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #C678DD">@Test</span></span>
+<span class="line"><span style="color: #C678DD">fun</span><span style="color: #ABB2BF"> </span><span style="color: #61AFEF">`fold use case`</span><span style="color: #ABB2BF">() {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">val</span><span style="color: #ABB2BF"> validators </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #56B6C2">listOf</span><span style="color: #ABB2BF">(</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">EmailValidator</span><span style="color: #ABB2BF">(),</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #E5C07B">ZipCodeValidator</span><span style="color: #ABB2BF">()</span></span>
+<span class="line"><span style="color: #ABB2BF">    )</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">val</span><span style="color: #ABB2BF"> userInvalid </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">UserModel</span><span style="color: #ABB2BF">(</span></span>
+<span class="line"><span style="color: #ABB2BF">        id </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">0</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">        name </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"Kahani"</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">        email </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #98C379">"kahani#me.com"</span><span style="color: #ABB2BF">,</span></span>
+<span class="line"><span style="color: #ABB2BF">        zipCode </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> </span><span style="color: #D19A66">23_13</span></span>
+<span class="line"><span style="color: #ABB2BF">    )</span></span>
+<span class="line"></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">val</span><span style="color: #ABB2BF"> isUserValid </span><span style="color: #56B6C2">=</span><span style="color: #ABB2BF"> validators.fold(</span><span style="color: #D19A66">true</span><span style="color: #ABB2BF">) { acc, validator </span><span style="color: #56B6C2">-></span></span>
+<span class="line"><span style="color: #ABB2BF">        acc </span><span style="color: #56B6C2">&#x26;&#x26;</span><span style="color: #ABB2BF"> validator.isValid(userInvalid)</span></span>
+<span class="line"><span style="color: #ABB2BF">    }</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #56B6C2">println</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"UserValid :: $isUserValid"</span><span style="color: #ABB2BF">) </span><span style="color: #7F848E">// prints UserValid :: false</span></span>
+<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre>
+<p>The fold iterates through each iterator and flips to false if any validation check fails.</p>
+<br>
+<h2 id="extra-bytes">Extra bytes</h2>
+<br>
+<ul>
+<li><strong>What if our Iterable is empty ?</strong></li>
+</ul>
+<br>
+<p>In this case <code>reduce</code> will throw an exception as it does not know what to return, where as <code>fold</code> will simply return the initial value provided. The <code>reduceOrNull</code> function will return <code>null</code> if you run into a situation where it is unsure if the iterable will be empty or not.</p>
+<br>
+<br>
+<ul>
+<li><strong>What if we want the current index throughout the iteration ?</strong></li>
+</ul>
+<br>
+<p><code>reduceIndexed</code> and <code>foldIndexed</code> provide a third variable, the index, to the lamda.</p>
+<br>
+<br>
+<ul>
+<li><strong><code>runningReduce</code> and <code>runningFold</code></strong></li>
+</ul>
+<br>
+<p>These functions work similar to <code>reduce</code> and <code>fold</code>, however instead of returning the accumulated value, it returns a list of values accumulated over each loop. When I find a better use case for this, I’ll expand on it!</p>
+    </article>
+
+    <ul class="tags-container astro-VJ4TPSPI">
+      <li class="inline-block my-1 underline-offset-4 astro-BLWJYJPT">
+  <a href="/tags/koltin" class="text-sm pr-2 group astro-BLWJYJPT">
+    <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-BLWJYJPT"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-BLWJYJPT"></path>
+    </svg>
+    &nbsp;<span class="astro-BLWJYJPT">koltin</span>
+  </a>
+</li><li class="inline-block my-1 underline-offset-4 astro-BLWJYJPT">
+  <a href="/tags/android" class="text-sm pr-2 group astro-BLWJYJPT">
+    <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-BLWJYJPT"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-BLWJYJPT"></path>
+    </svg>
+    &nbsp;<span class="astro-BLWJYJPT">android</span>
+  </a>
+</li>
+    </ul>
+  </main><footer class="mt-auto astro-SZ7XMLTE">
+  <div class="max-w-3xl mx-auto px-0">
+  <hr class="border-skin-line" aria-hidden="true">
+</div>
+  <div class="footer-wrapper astro-SZ7XMLTE">
+    <div class="social-icons flex astro-UPU6FZXR">
+  <a type="button" href="https://github.com/0xOpenBytes" tabindex="0" class="group link-button astro-UPU6FZXR astro-5EUNQZKT" title=" 0xOpenBytes on Github">
+  <svg
+    xmlns="http://www.w3.org/2000/svg"
+    class="icon-tabler"
+    stroke-linecap="round"
+    stroke-linejoin="round"
+  >
+    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+    <path
+      d="M9 19c-4.3 1.4 -4.3 -2.5 -6 -3m12 5v-3.5c0 -1 .1 -1.4 -.5 -2c2.8 -.3 5.5 -1.4 5.5 -6a4.6 4.6 0 0 0 -1.3 -3.2a4.2 4.2 0 0 0 -.1 -3.2s-1.1 -.3 -3.5 1.3a12.3 12.3 0 0 0 -6.2 0c-2.4 -1.6 -3.5 -1.3 -3.5 -1.3a4.2 4.2 0 0 0 -.1 3.2a4.6 4.6 0 0 0 -1.3 3.2c0 4.6 2.7 5.7 5.5 6c-.6 .6 -.6 1.2 -.5 2v3.5"
+    ></path>
+  </svg>
+</a><a type="button" href="mailto:0xOpenBytes@gmail.com" tabindex="0" class="group link-button astro-UPU6FZXR astro-5EUNQZKT" title="Send an email to 0xOpenBytes">
+  <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon-tabler"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <rect x="3" y="5" width="18" height="14" rx="2"></rect>
+      <polyline points="3 7 12 13 21 7"></polyline>
+    </svg>
+</a><a type="button" href="https://discord.gg/HUmaDXVsW7" tabindex="0" class="group link-button astro-UPU6FZXR astro-5EUNQZKT" title="0xOpenBytes on Discord">
+  <svg
+      xmlns="http://www.w3.org/2000/svg"
+      class="icon-tabler"
+      stroke-linecap="round"
+      stroke-linejoin="round"
+    >
+      <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+      <circle cx="9" cy="12" r="1"></circle>
+      <circle cx="15" cy="12" r="1"></circle>
+      <path d="M7.5 7.5c3.5 -1 5.5 -1 9 0"></path>
+      <path d="M7 16.5c3.5 1 6.5 1 10 0"></path>
+      <path d="M15.5 17c0 1 1.5 3 2 3c1.5 0 2.833 -1.667 3.5 -3c.667 -1.667 .5 -5.833 -1.5 -11.5c-1.457 -1.015 -3 -1.34 -4.5 -1.5l-1 2.5"></path>
+      <path d="M8.5 17c0 1 -1.356 3 -1.832 3c-1.429 0 -2.698 -1.667 -3.333 -3c-.635 -1.667 -.476 -5.833 1.428 -11.5c1.388 -1.015 2.782 -1.34 4.237 -1.5l1 2.5"></path>
+    </svg>
+</a>
+</div>
+    <div class="copyright-wrapper astro-SZ7XMLTE">
+      <span class="astro-SZ7XMLTE">Copyright &#169; 2023</span>
+      <span class="separator astro-SZ7XMLTE">&nbsp;|&nbsp;</span>
+      <span class="astro-SZ7XMLTE">All rights reserved.</span>
+    </div>
+  </div>
+</footer>
+  </body></html>
