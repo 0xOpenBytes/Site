@@ -1,7 +1,7 @@
 ---
 title: "SwiftLet 04: Optionals"
 author: 0xLeif
-pubDatetime: 2021-11-30T17:26:00Z
+pubDatetime: 2021-11-30T04:06:31Z
 postSlug: swiftlet-04-optionals
 featured: false
 draft: false

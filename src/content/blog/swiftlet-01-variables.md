@@ -1,7 +1,7 @@
 ---
 title: "SwiftLet 01: Variables"
 author: 0xLeif
-pubDatetime: 2022-06-06T04:06:31Z
+pubDatetime: 2021-11-30T04:06:31Z
 postSlug: swift-let-variables
 featured: false
 draft: false
