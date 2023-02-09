@@ -1,7 +1,7 @@
 ---
 title: "SwiftLet 03: The var Variable"
 author: 0xLeif
-pubDatetime: 2022-06-06T04:06:31Z
+pubDatetime: 2021-11-30T04:06:31Z
 postSlug: swiftlet-03-var
 featured: false
 draft: false
