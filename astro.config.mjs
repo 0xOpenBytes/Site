@@ -10,7 +10,7 @@ import image from "@astrojs/image";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://astro-paper.pages.dev/",
+  site: "https://openbytes.dev",
   integrations: [tailwind({
     config: {
       applyBaseStyles: false
