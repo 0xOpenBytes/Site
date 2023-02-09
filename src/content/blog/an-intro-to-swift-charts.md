@@ -8,10 +8,9 @@ draft: false
 tags:
   - swift
   - swiftui
-  - swift charts
+  - swift-charts
 ogImage: ""
-description:
-  A barebones no frills introduction to displaying the most basic of charts, a Bar Chart.
+description: A barebones no frills introduction to displaying the most basic of charts, a Bar Chart.
 ---
 
 ## A barebones no frills introduction to displaying the most basic of charts, a Bar Chart.
@@ -25,6 +24,7 @@ Swift Charts is a powerful and user-friendly library for creating beautiful and 
 <img src="https://miro.medium.com/max/1400/1*eBbVaymJUGsTIyRsfv_xbg.webp" alt="Image of a chart displayed on an iPhone which is on a desk" width="100%"/>
 
 ## Great, so how do I implement it?
+
 Within the view in which you'd like to display a chart, simply import the Charts library.
 
 ```swift
@@ -53,6 +53,7 @@ struct ChartView: View {
 }
 
 ```
+
 <br/>
 
 Your data set will need to conform to [Random Access Collection](https://developer.apple.com/documentation/swift/randomaccesscollection) and [Identifiable](https://developer.apple.com/documentation/swift/identifiable). For instance, you could create a model for an object you want to represent data for, and then create an array of that model. If your model does not conform to `Identifiable`, you could get away with simply adding `id: \.self` within the `ForEach` parameters.
@@ -70,4 +71,5 @@ As simple as that, we have drawn out a very basic implementation of a Bar Chart.
 <br/>
 
 ## In conclusion
+
 Apple did a great job with this framework as it is incredibly intuitive. It provides developers with a very easy way to implement beautiful adaptive graphics to represent various types of data. One thing to keep him ind however is that one chart that is missing from our toolbox is the Pie Chart. After speaking with Apple evangelists during one of the WWDC22 Slack Sessions they do have plans to implement them in the future.

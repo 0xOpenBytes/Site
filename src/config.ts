@@ -7,7 +7,7 @@ export const SITE = {
   title: "0xOpenBytes",
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
-  postPerPage: 3,
+  postPerPage: 8,
 };
 
 export const LOGO_IMAGE = {
@@ -44,7 +44,7 @@ export const SOCIALS: SocialObjects = [
   },
   {
     name: "Mail",
-    href: "mailto:yourmail@gmail.com",
+    href: "mailto:0xOpenBytes@gmail.com",
     linkTitle: `Send an email to ${SITE.title}`,
     active: true,
   },
@@ -101,5 +101,5 @@ export const SOCIALS: SocialObjects = [
     href: "https://discord.gg/HUmaDXVsW7",
     linkTitle: `${SITE.title} on Discord`,
     active: true,
-  }
+  },
 ];
