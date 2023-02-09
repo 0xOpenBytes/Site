@@ -1,5 +1,5 @@
 ---
-title: "SwiftLet #02 - Let"
+title: "SwiftLet 02 - Let"
 author: 0xLeif
 pubDatetime: 2021-11-30T17:26:00Z
 postSlug: swiftlet-02-let
@@ -8,8 +8,7 @@ draft: false
 tags:
   - swiftlet
   - swift
-description:
-  Let us learn more about the let in this episode of SwiftLet!
+description: Let us learn more about the let in this episode of SwiftLet!
 ---
 
 # SwiftLet #02: Let
@@ -24,7 +23,7 @@ variable = "👋"
 // variable = "🙅" // This will result in a compiler error!
 ```
 
-If you uncomment the line where `variable` is being set to 🙅, you will get a compiler error. 
+If you uncomment the line where `variable` is being set to 🙅, you will get a compiler error.
 
 `Immutable value 'variable' may only be initialized once`
 
@@ -32,12 +31,14 @@ If you uncomment the line where `variable` is being set to 🙅, you will get a 
 
 **Example 1**
 Simply set the value. Go type inference!
+
 ```swift
 let pi = Float.pi
 ```
 
 **Example 2**
 What if we tried to modify the value? In this example, we are trying to modify an Array after it has been initialized, in Swift Arrays are **Value Types** _(in a later chapter we will dive into the topic of **Value Types** and **Reference Types**)_.
+
 ```swift
 let variable: [String]
 
@@ -52,6 +53,7 @@ The error you get is because **Value Types** are always reinitialized! Their val
 
 **Example 3**
 We can **get** the variable and use the value, in this example we print the current value to the console.
+
 ```swift
 let variable = "👋"
 
