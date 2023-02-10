@@ -7,7 +7,7 @@ featured: false
 draft: true
 tags:
   - project
-  - tempalte
+  - template
 description:
   This is my project template description.
 ---
