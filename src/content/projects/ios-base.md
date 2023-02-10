@@ -7,7 +7,6 @@ featured: false
 draft: false
 tags:
   - ios
-  - template
   - swift
   - swiftui
 description: iOS-base aims to provide developers with an easy-to-use, and easy-to-understand template that can be molded into your needs or used as a guide for building your application.
