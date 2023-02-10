@@ -112,7 +112,7 @@
     <h3 class="author astro-RZTQ2YFN">by: OpenBytes</h3>
     <div class="flex items-center space-x-2 opacity-80 my-2 astro-RZTQ2YFN"><svg xmlns="http://www.w3.org/2000/svg" class="scale-100 inline-block h-6 w-6 fill-skin-base" aria-hidden="true"><path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path></svg><span class="sr-only">Posted on:</span><span class="italic text-base">December 1, 2022<span aria-hidden="true"> | </span><span class="sr-only"> at </span>12:00 PM</span></div>
     <article id="article" role="article" class="prose mx-auto mt-8 max-w-3xl astro-RZTQ2YFN">
-      <img src="../public/assets/projects/images/openbytes-t.png" alt="Icon representing the OpenBytes t-framework." width="35%">
+      <img src="/assets/projects/images/openbytes-t.png" alt="Icon representing the OpenBytes t-framework." width="35%">
 <h2 id="what-is-t">What is <code>t</code>?</h2>
 <p><code>t</code> is a simple testing framework using closures and errors. You have the ability to create a <code>suite</code> that has multiple steps, expectations, and asserts. Expectations can be used to <code>expect</code> one or multiple assertions.</p>
 <h2 id="where-can-t-be-used">Where can <code>t</code> be used?</h2>
@@ -125,27 +125,27 @@
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #56B6C2">assert</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">true</span><span style="color: #ABB2BF">)</span></span>
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #56B6C2">assert</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">, </span><span style="color: #61AFEF">isEqualTo</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">)</span></span>
 <span class="line"><span style="color: #ABB2BF">    }</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span></span>
+<span class="line"></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E">// Add an assertion that asserting false is not true</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #56B6C2">assert</span><span style="color: #ABB2BF">(</span><span style="color: #61AFEF">notTrue</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">false</span><span style="color: #ABB2BF">)</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span></span>
+<span class="line"></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E">// Add an assertion that "Hello" is not equal to "World"</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #56B6C2">assert</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"Hello"</span><span style="color: #ABB2BF">, </span><span style="color: #61AFEF">isNotEqualTo</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"World"</span><span style="color: #ABB2BF">)</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span></span>
+<span class="line"></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E">// Log a message</span></span>
 <span class="line"><span style="color: #ABB2BF">    t.</span><span style="color: #61AFEF">log</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"📣 Test Log Message"</span><span style="color: #ABB2BF">)</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span></span>
+<span class="line"></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E">// Log a t.error</span></span>
 <span class="line"><span style="color: #ABB2BF">    t.</span><span style="color: #61AFEF">log</span><span style="color: #ABB2BF">(</span><span style="color: #61AFEF">error</span><span style="color: #ABB2BF">: t.error(</span><span style="color: #61AFEF">description</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"Mock Error"</span><span style="color: #ABB2BF">))</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span></span>
+<span class="line"></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E">// Log any error</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">struct</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">SomeError</span><span style="color: #ABB2BF">: Error { }</span></span>
 <span class="line"><span style="color: #ABB2BF">    t.</span><span style="color: #61AFEF">log</span><span style="color: #ABB2BF">(</span><span style="color: #61AFEF">error</span><span style="color: #ABB2BF">: </span><span style="color: #61AFEF">SomeError</span><span style="color: #ABB2BF">())</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span></span>
+<span class="line"></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E">// Add an assertion to check if a value is nil</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">let</span><span style="color: #ABB2BF"> someValue: </span><span style="color: #E5C07B">String</span><span style="color: #ABB2BF">? = </span><span style="color: #D19A66">nil</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #56B6C2">assert</span><span style="color: #ABB2BF">(</span><span style="color: #61AFEF">isNil</span><span style="color: #ABB2BF">: someValue)</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span></span>
+<span class="line"></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E">// Add an assertion to check if a value is not nil</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">let</span><span style="color: #ABB2BF"> someOtherValue: </span><span style="color: #E5C07B">String</span><span style="color: #ABB2BF">? = </span><span style="color: #98C379">"💠"</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #56B6C2">assert</span><span style="color: #ABB2BF">(</span><span style="color: #61AFEF">isNotNil</span><span style="color: #ABB2BF">: someOtherValue)</span></span>
