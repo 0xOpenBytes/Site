@@ -14,7 +14,7 @@ description:
   iOS-base aims to provide developers with an easy-to-use, and easy-to-understand template that can be molded into your needs or used as a guide for building your application.
 ---
 
-<img src="/src/content/projects/images/ios-base-icon.png" alt="Icon representing the OpenBytes iOS-base template project." width="35%"/>
+<img src="../public/assets/projects/images/ios-base-icon.png" alt="Icon representing the OpenBytes iOS-base template project." width="35%"/>
 
 Let's face it, when you are going to start a new iOS project it would be nice if you could have some boilerplate code ready for you to work with. Something that is tested, has necessary features, and is organized in a readable, and concise manner. iOS-base specifically aims to provide developers with an easy-to-use, and easy-to-understand template that can be molded into your needs or used as a guide for building your application.
 

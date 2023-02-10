@@ -14,7 +14,7 @@ description:
   t is a simple testing framework using closures and errors. You have the ability to create a suite that has multiple steps, expectations, and asserts. Expectations can be used to expect one or multiple assertions.
 ---
 
-<img src="/src/content/projects/images/openbytes-t.png" alt="Icon representing the OpenBytes t-framework." width="35%"/>
+<img src="../public/assets/projects/images/openbytes-t.png" alt="Icon representing the OpenBytes t-framework." width="35%"/>
 
 
 ## What is `t`?
