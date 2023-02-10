@@ -4,26 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width">
     <link rel="icon" type="image/svg+xml" href="/favicon.svg">
-    <link rel="canonical" href="https://openbytes.dev/posts/testing-with-t/">
+    <link rel="canonical" href="https://openbytes.dev/projects/t/">
     <meta name="generator" content="Astro v2.0.10">
 
     <!-- General Meta Tags -->
-    <title>Testing Code with t</title>
-    <meta name="title" content="Testing Code with t">
-    <meta name="description" content="🧪 Quickly test expectations with t!">
-    <meta name="author" content="0xLeif">
+    <title>t</title>
+    <meta name="title" content="t">
+    <meta name="description" content="t is a simple testing framework using closures and errors. You have the ability to create a suite that has multiple steps, expectations, and asserts. Expectations can be used to expect one or multiple assertions.">
+    <meta name="author" content="OpenBytes">
 
     <!-- Open Graph / Facebook -->
-    <meta property="og:title" content="Testing Code with t">
-    <meta property="og:description" content="🧪 Quickly test expectations with t!">
-    <meta property="og:url" content="https://openbytes.dev/posts/testing-with-t/">
-    <meta property="og:image" content="https://openbytes.dev/Testing%20Code%20with%20t.svg">
+    <meta property="og:title" content="t">
+    <meta property="og:description" content="t is a simple testing framework using closures and errors. You have the ability to create a suite that has multiple steps, expectations, and asserts. Expectations can be used to expect one or multiple assertions.">
+    <meta property="og:url" content="https://openbytes.dev/projects/t/">
+    <meta property="og:image" content="https://openbytes.dev/t.svg">
 
     <!-- Twitter -->
     <meta property="twitter:card" content="summary_large_image">
-    <meta property="twitter:url" content="https://openbytes.dev/posts/testing-with-t/">
-    <meta property="twitter:title" content="Testing Code with t">
-    <meta property="twitter:description" content="🧪 Quickly test expectations with t!">
+    <meta property="twitter:url" content="https://openbytes.dev/projects/t/">
+    <meta property="twitter:title" content="t">
+    <meta property="twitter:description" content="t is a simple testing framework using closures and errors. You have the ability to create a suite that has multiple steps, expectations, and asserts. Expectations can be used to expect one or multiple assertions.">
     <meta property="twitter:image" content="https://openbytes.dev/astropaper-og.jpg">
 
     <!-- Google Font -->
@@ -35,11 +35,11 @@
 
     <script src="/toggle-theme.js"></script>
   <link rel="stylesheet" href="/_astro/about.349d9f2e.css" />
+<link rel="stylesheet" href="/_astro/_slug_.77dedcfe.css" />
 <link rel="stylesheet" href="/_astro/about.9dee87f4.css" />
 <link rel="stylesheet" href="/_astro/_slug_.faea2550.css" />
-<link rel="stylesheet" href="/_astro/_slug_.77dedcfe.css" />
-<link rel="stylesheet" href="/_astro/_slug_.5d5f7e01.css" />
-<link rel="stylesheet" href="/_astro/_slug_.d833ca2a.css" /><script type="module">const e=document.querySelector(".hamburger-menu"),n=document.querySelector("#menu-items")?.classList,t=document.querySelector(".icon-container")?.classList,o=document.querySelector("#first-line")?.classList,a=document.querySelector("#second-line ")?.classList,s=document.querySelector("#third-line")?.classList;e?.addEventListener("click",function(){e?.getAttribute("aria-expanded")==="false"?(e?.setAttribute("aria-expanded","true"),e?.setAttribute("aria-label","Close Menu"),n?.remove("display-none"),t?.remove("flex"),t?.add("relative"),o?.add("rotate-45","absolute","bottom-1/2"),s?.add("display-none"),a?.add("!w-full","-rotate-45","absolute","bottom-1/2")):(e?.setAttribute("aria-expanded","false"),e?.setAttribute("aria-label","Open Menu"),n?.add("display-none"),t?.add("flex"),t?.remove("relative"),o?.remove("rotate-45","absolute","bottom-1/2"),s?.remove("display-none"),a?.remove("!w-full","-rotate-45","absolute","bottom-1/2"))});
+<link rel="stylesheet" href="/_astro/_slug_.ce1e25d5.css" />
+<link rel="stylesheet" href="/_astro/_slug_.d0979496.css" /><script type="module">const e=document.querySelector(".hamburger-menu"),n=document.querySelector("#menu-items")?.classList,t=document.querySelector(".icon-container")?.classList,o=document.querySelector("#first-line")?.classList,a=document.querySelector("#second-line ")?.classList,s=document.querySelector("#third-line")?.classList;e?.addEventListener("click",function(){e?.getAttribute("aria-expanded")==="false"?(e?.setAttribute("aria-expanded","true"),e?.setAttribute("aria-label","Close Menu"),n?.remove("display-none"),t?.remove("flex"),t?.add("relative"),o?.add("rotate-45","absolute","bottom-1/2"),s?.add("display-none"),a?.add("!w-full","-rotate-45","absolute","bottom-1/2")):(e?.setAttribute("aria-expanded","false"),e?.setAttribute("aria-label","Open Menu"),n?.add("display-none"),t?.add("flex"),t?.remove("relative"),o?.remove("rotate-45","absolute","bottom-1/2"),s?.remove("display-none"),a?.remove("!w-full","-rotate-45","absolute","bottom-1/2"))});
 </script></head>
   <body>
     <header class="astro-3EF6KSR2">
@@ -102,33 +102,24 @@
   <div class="max-w-3xl mx-auto px-4">
   <hr class="border-skin-line" aria-hidden="true">
 </div>
-</header><div class="mx-auto flex w-full max-w-3xl justify-start px-2 astro-VJ4TPSPI">
-    <button class="focus-outline mt-8 mb-2 flex hover:opacity-75 astro-VJ4TPSPI" onclick="history.back()">
-      <svg xmlns="http://www.w3.org/2000/svg" class="astro-VJ4TPSPI"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" class="astro-VJ4TPSPI"></path>
-      </svg><span class="astro-VJ4TPSPI">Go back</span>
+</header><div class="mx-auto flex w-full max-w-3xl justify-start px-2 astro-RZTQ2YFN">
+    <button class="focus-outline mt-8 mb-2 flex hover:opacity-75 astro-RZTQ2YFN" onclick="history.back()">
+      <svg xmlns="http://www.w3.org/2000/svg" class="astro-RZTQ2YFN"><path d="M13.293 6.293 7.586 12l5.707 5.707 1.414-1.414L10.414 12l4.293-4.293z" class="astro-RZTQ2YFN"></path>
+      </svg><span class="astro-RZTQ2YFN">Go back</span>
     </button>
-  </div><main id="main-content" class="astro-VJ4TPSPI">
-    <h1 class="post-title astro-VJ4TPSPI">Testing Code with t</h1>
-    <h3 class="author astro-VJ4TPSPI">by: 0xLeif</h3>
-    <div class="flex items-center space-x-2 opacity-80 my-2 astro-VJ4TPSPI"><svg xmlns="http://www.w3.org/2000/svg" class="scale-100 inline-block h-6 w-6 fill-skin-base" aria-hidden="true"><path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path></svg><span class="sr-only">Posted on:</span><span class="italic text-base">February 2, 2022<span aria-hidden="true"> | </span><span class="sr-only"> at </span>08:22 PM</span></div>
-    <article id="article" role="article" class="prose mx-auto mt-8 max-w-3xl astro-VJ4TPSPI">
-      <h1 id="testing-code-with-t-spm">Testing code with <code>t</code> SPM 📦</h1>
-<p>🔗
-<em><a href="https://github.com/0xOpenBytes/t">Check out t</a></em></p>
-<br>
-<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #ABB2BF">git clone git@github.com:0xOpenBytes/t.git</span></span></code></pre>
-<br>
+  </div><main id="main-content" class="astro-RZTQ2YFN">
+    <h1 class="post-title astro-RZTQ2YFN">t</h1>
+    <h3 class="author astro-RZTQ2YFN">by: OpenBytes</h3>
+    <div class="flex items-center space-x-2 opacity-80 my-2 astro-RZTQ2YFN"><svg xmlns="http://www.w3.org/2000/svg" class="scale-100 inline-block h-6 w-6 fill-skin-base" aria-hidden="true"><path d="M7 11h2v2H7zm0 4h2v2H7zm4-4h2v2h-2zm0 4h2v2h-2zm4-4h2v2h-2zm0 4h2v2h-2z"></path><path d="M5 22h14c1.103 0 2-.897 2-2V6c0-1.103-.897-2-2-2h-2V2h-2v2H9V2H7v2H5c-1.103 0-2 .897-2 2v14c0 1.103.897 2 2 2zM19 8l.001 12H5V8h14z"></path></svg><span class="sr-only">Posted on:</span><span class="italic text-base">December 1, 2022<span aria-hidden="true"> | </span><span class="sr-only"> at </span>12:00 PM</span></div>
+    <article id="article" role="article" class="prose mx-auto mt-8 max-w-3xl astro-RZTQ2YFN">
+      <img src="/src/content/projects/images/openbytes-t.png" alt="Icon representing the OpenBytes t-framework." width="35%">
 <h2 id="what-is-t">What is <code>t</code>?</h2>
-<p><code>t</code> is a simple testing framework using closures and errors. You have the ability to create a suite that has multiple steps, expectations, and asserts. Expectations can be used to expect one or multiple assertions. It can be used to test quickly inside a function to make sure something is working as expected. <code>t</code> can also be used in unit test if wanted.</p>
-<p><br><br></p>
-<h3 id="creating-a-test-suite">Creating a Test Suite</h3>
-<br>
-<p>Using <code>t.suite(...)</code> you can create a test suite that will return false if any error is thrown. Test suites contains multiple steps, expectations, assertions, and even test suites. All logging will use <code>t.logger</code>, which defaults to <code>print(...)</code>.</p>
-<br>
-<p><strong>Example Test Suite</strong></p>
-<br>
-<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #7F848E">// Create Test Suite</span></span>
-<span class="line"><span style="color: #ABB2BF">t.</span><span style="color: #E06C75">suite</span><span style="color: #ABB2BF"> {</span></span>
+<p><code>t</code> is a simple testing framework using closures and errors. You have the ability to create a <code>suite</code> that has multiple steps, expectations, and asserts. Expectations can be used to <code>expect</code> one or multiple assertions.</p>
+<h2 id="where-can-t-be-used">Where can <code>t</code> be used?</h2>
+<p><code>t</code> can be used to test quickly inside a function to make sure something is working as expected. <code>t</code> can also be used in unit tests if wanted.</p>
+<h2 id="examples">Examples</h2>
+<h3 id="tsuite">t.suite</h3>
+<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #ABB2BF">t.</span><span style="color: #E06C75">suite</span><span style="color: #ABB2BF"> {</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E">// Add an expectation that asserting true is true and that 2 is equal to 2</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #E06C75">expect</span><span style="color: #ABB2BF"> {</span></span>
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #56B6C2">assert</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">true</span><span style="color: #ABB2BF">)</span></span>
@@ -147,6 +138,10 @@
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E">// Log a t.error</span></span>
 <span class="line"><span style="color: #ABB2BF">    t.</span><span style="color: #61AFEF">log</span><span style="color: #ABB2BF">(</span><span style="color: #61AFEF">error</span><span style="color: #ABB2BF">: t.error(</span><span style="color: #61AFEF">description</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"Mock Error"</span><span style="color: #ABB2BF">))</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E">// Log any error</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">struct</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">SomeError</span><span style="color: #ABB2BF">: Error { }</span></span>
+<span class="line"><span style="color: #ABB2BF">    t.</span><span style="color: #61AFEF">log</span><span style="color: #ABB2BF">(</span><span style="color: #61AFEF">error</span><span style="color: #ABB2BF">: </span><span style="color: #61AFEF">SomeError</span><span style="color: #ABB2BF">())</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #7F848E">// Add an assertion to check if a value is nil</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">let</span><span style="color: #ABB2BF"> someValue: </span><span style="color: #E5C07B">String</span><span style="color: #ABB2BF">? = </span><span style="color: #D19A66">nil</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #56B6C2">assert</span><span style="color: #ABB2BF">(</span><span style="color: #61AFEF">isNil</span><span style="color: #ABB2BF">: someValue)</span></span>
@@ -155,95 +150,50 @@
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">let</span><span style="color: #ABB2BF"> someOtherValue: </span><span style="color: #E5C07B">String</span><span style="color: #ABB2BF">? = </span><span style="color: #98C379">"💠"</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #56B6C2">assert</span><span style="color: #ABB2BF">(</span><span style="color: #61AFEF">isNotNil</span><span style="color: #ABB2BF">: someOtherValue)</span></span>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre>
-<br>
-<p><strong>Example Test Suite Output</strong></p>
-<br>
-<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #abb2bf">🧪 Testing Suite</span></span>
-<span class="line"><span style="color: #abb2bf">🔘 Expecting something to be true</span></span>
-<span class="line"><span style="color: #abb2bf">📣 Test Log Message</span></span>
-<span class="line"><span style="color: #abb2bf">❗️ Mock Error (</span></span>
-<span class="line"><span style="color: #abb2bf">    File: tTests.swift</span></span>
-<span class="line"><span style="color: #abb2bf">    Function: testExample()</span></span>
-<span class="line"><span style="color: #abb2bf">    Line: 25</span></span>
-<span class="line"><span style="color: #abb2bf">)</span></span>
-<span class="line"><span style="color: #abb2bf">✅ Suite Passed!</span></span></code></pre>
-<br>
-<h3 id="making-expectations">Making Expectations</h3>
-<br>
-<p>Using <code>t.expect(...)</code> we can make an expectation with one or multiple assertions. We can create variables and log messages too. <strong>The expectation will be true unless some error is thrown.</strong> The error might be thrown by an assertion or can be thrown manually too.</p>
-<br>
-<p><strong>Example Expectation</strong></p>
-<br>
-<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #61AFEF">expect</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"true is true and that 2 is equal to 2"</span><span style="color: #ABB2BF">) {</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #56B6C2">assert</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">true</span><span style="color: #ABB2BF">)</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #56B6C2">assert</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">, </span><span style="color: #61AFEF">isEqualTo</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">)</span></span>
+<h3 id="texpect">t.expect</h3>
+<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #E06C75">expect</span><span style="color: #ABB2BF"> {</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">let</span><span style="color: #ABB2BF"> someValue: </span><span style="color: #E5C07B">String</span><span style="color: #ABB2BF">? = </span><span style="color: #98C379">"Hello"</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #56B6C2">assert</span><span style="color: #ABB2BF">(</span><span style="color: #61AFEF">isNil</span><span style="color: #ABB2BF">: someValue)</span></span>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre>
-<br>
-<p><strong>Example Expectation Output</strong></p>
-<br>
-<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #abb2bf">🔘 Expecting true is true and that 2 is equal to 2</span></span></code></pre>
-<br>
-<p><strong>Making an Assertion</strong></p>
-<br>
-<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #56B6C2">assert</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"Hello"</span><span style="color: #ABB2BF">, </span><span style="color: #61AFEF">isNotEqualTo</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"World"</span><span style="color: #ABB2BF">)</span></span></code></pre>
-<br>
-<h3 id="logging-information">Logging Information</h3>
-<br>
-<p>Test suite information is automatically logged using <code>t.logger</code>. The logger is a static variable of type <code>(String) -> Void</code> which has a default value of <code>{ print($0) }</code>. Feel free to supply your own logging function. Manual logging should use <code>t.log(String)</code> or <code>t.log(error: Error)</code>.</p>
-<br>
-<p><strong>Example Manual Logging</strong></p>
-<br>
-<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #7F848E">// Log a message</span></span>
-<span class="line"><span style="color: #ABB2BF">t.</span><span style="color: #61AFEF">log</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"📣 Test Log Message"</span><span style="color: #ABB2BF">)</span></span>
-<span class="line"></span>
-<span class="line"><span style="color: #7F848E">// Log a t.error</span></span>
-<span class="line"><span style="color: #ABB2BF">t.</span><span style="color: #61AFEF">log</span><span style="color: #ABB2BF">(</span><span style="color: #61AFEF">error</span><span style="color: #ABB2BF">: t.error(</span><span style="color: #61AFEF">description</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"Mock Error"</span><span style="color: #ABB2BF">))</span></span>
-<span class="line"></span>
-<span class="line"><span style="color: #7F848E">// Log any error</span></span>
-<span class="line"><span style="color: #C678DD">struct</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">SomeError</span><span style="color: #ABB2BF">: Error { }</span></span>
-<span class="line"><span style="color: #ABB2BF">t.</span><span style="color: #61AFEF">log</span><span style="color: #ABB2BF">(</span><span style="color: #61AFEF">error</span><span style="color: #ABB2BF">: </span><span style="color: #61AFEF">SomeError</span><span style="color: #ABB2BF">())</span></span></code></pre>
-<br>
-<p><strong>Quick Testing</strong></p>
-<br>
-<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #ABB2BF">t.</span><span style="color: #E06C75">suite</span><span style="color: #ABB2BF"> {</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #E06C75">expect</span><span style="color: #ABB2BF"> {</span></span>
-<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">let</span><span style="color: #ABB2BF"> expectedValue = ...</span></span>
-<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">let</span><span style="color: #ABB2BF"> value = </span><span style="color: #61AFEF">function</span><span style="color: #ABB2BF">()</span></span>
-<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #56B6C2">assert</span><span style="color: #ABB2BF">(value, </span><span style="color: #61AFEF">isEqualTo</span><span style="color: #ABB2BF">: expectedValue)</span></span>
-<span class="line"><span style="color: #ABB2BF">    }</span></span>
-<span class="line"><span style="color: #ABB2BF">}</span></span></code></pre>
-<br>
-<p><strong>Unit Tests</strong></p>
-<br>
-<p><strong>XCTAssert Test Suite</strong></p>
-<br>
+<h3 id="tassert">t.assert</h3>
+<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #56B6C2">assert</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"Hello"</span><span style="color: #ABB2BF">, </span><span style="color: #61AFEF">isEqualTo</span><span style="color: #ABB2BF">: </span><span style="color: #98C379">"World"</span><span style="color: #ABB2BF">)</span></span></code></pre>
+<h3 id="tlog">t.log</h3>
+<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #ABB2BF">t.</span><span style="color: #61AFEF">log</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"📣 Test Log Message"</span><span style="color: #ABB2BF">)</span></span></code></pre>
+<h3 id="xctest">XCTest</h3>
+<h4 id="assert-suite-is-true">Assert suite is true</h4>
 <pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #61AFEF">XCTAssert</span><span style="color: #ABB2BF">(</span></span>
 <span class="line"><span style="color: #ABB2BF">    t.</span><span style="color: #E06C75">suite</span><span style="color: #ABB2BF"> {</span></span>
-<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #7F848E">// ...</span></span>
+<span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #56B6C2">assert</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">true</span><span style="color: #ABB2BF">)</span></span>
 <span class="line"><span style="color: #ABB2BF">    }</span></span>
 <span class="line"><span style="color: #ABB2BF">)</span></span></code></pre>
-<br>
-<p><strong>XCTAssertNoThrow Expectation</strong></p>
-<br>
+<h4 id="assert-expectation-is-true">Assert expectation is true</h4>
 <pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #61AFEF">XCTAssertNoThrow</span><span style="color: #ABB2BF">(</span></span>
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #61AFEF">expect</span><span style="color: #ABB2BF">(</span><span style="color: #98C379">"true is true and that 2 is equal to 2"</span><span style="color: #ABB2BF">) {</span></span>
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #56B6C2">assert</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">true</span><span style="color: #ABB2BF">)</span></span>
 <span class="line"><span style="color: #ABB2BF">        </span><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #56B6C2">assert</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">, </span><span style="color: #61AFEF">isEqualTo</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">2</span><span style="color: #ABB2BF">)</span></span>
 <span class="line"><span style="color: #ABB2BF">    }</span></span>
 <span class="line"><span style="color: #ABB2BF">)</span></span></code></pre>
-<br>
-<p><strong>XCTAssertNoThrow Assert</strong></p>
-<br>
-<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #61AFEF">XCTAssertNoThrow</span><span style="color: #ABB2BF">(</span></span>
-<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #56B6C2">assert</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">true</span><span style="color: #ABB2BF">)</span></span>
+<h4 id="assert-is-false">Assert is false</h4>
+<pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #61AFEF">XCTAssertThrowsError</span><span style="color: #ABB2BF">(</span></span>
+<span class="line"><span style="color: #ABB2BF">    </span><span style="color: #C678DD">try</span><span style="color: #ABB2BF"> t.</span><span style="color: #56B6C2">assert</span><span style="color: #ABB2BF">(</span><span style="color: #D19A66">false</span><span style="color: #ABB2BF">)</span></span>
 <span class="line"><span style="color: #ABB2BF">)</span></span></code></pre>
-<br>
-<br>
-<p><a href="/posts/spm-t/">⬆️ Back to the Top</a></p>
+<h3 id="visit-the-github-repo"><a href="https://github.com/0xOpenBytes/ios-base">Visit the Github Repo</a></h3>
     </article>
 
-    <ul class="tags-container astro-VJ4TPSPI">
+    <ul class="tags-container astro-RZTQ2YFN">
       <li class="inline-block my-1 underline-offset-4 astro-BLWJYJPT">
+  <a href="/tags/ios" class="text-sm pr-2 group astro-BLWJYJPT">
+    <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-BLWJYJPT"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-BLWJYJPT"></path>
+    </svg>
+    &nbsp;<span class="astro-BLWJYJPT">ios</span>
+  </a>
+</li><li class="inline-block my-1 underline-offset-4 astro-BLWJYJPT">
+  <a href="/tags/testing" class="text-sm pr-2 group astro-BLWJYJPT">
+    <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-BLWJYJPT"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-BLWJYJPT"></path>
+    </svg>
+    &nbsp;<span class="astro-BLWJYJPT">testing</span>
+  </a>
+</li><li class="inline-block my-1 underline-offset-4 astro-BLWJYJPT">
   <a href="/tags/swift" class="text-sm pr-2 group astro-BLWJYJPT">
     <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-BLWJYJPT"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-BLWJYJPT"></path>
     </svg>
@@ -254,18 +204,6 @@
     <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-BLWJYJPT"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-BLWJYJPT"></path>
     </svg>
     &nbsp;<span class="astro-BLWJYJPT">swiftui</span>
-  </a>
-</li><li class="inline-block my-1 underline-offset-4 astro-BLWJYJPT">
-  <a href="/tags/testing" class="text-sm pr-2 group astro-BLWJYJPT">
-    <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-BLWJYJPT"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-BLWJYJPT"></path>
-    </svg>
-    &nbsp;<span class="astro-BLWJYJPT">testing</span>
-  </a>
-</li><li class="inline-block my-1 underline-offset-4 astro-BLWJYJPT">
-  <a href="/tags/t" class="text-sm pr-2 group astro-BLWJYJPT">
-    <svg xmlns="http://www.w3.org/2000/svg" class=" scale-75 astro-BLWJYJPT"><path d="M16.018 3.815 15.232 8h-4.966l.716-3.815-1.964-.37L8.232 8H4v2h3.857l-.751 4H3v2h3.731l-.714 3.805 1.965.369L8.766 16h4.966l-.714 3.805 1.965.369.783-4.174H20v-2h-3.859l.751-4H21V8h-3.733l.716-3.815-1.965-.37zM14.106 14H9.141l.751-4h4.966l-.752 4z" class="astro-BLWJYJPT"></path>
-    </svg>
-    &nbsp;<span class="astro-BLWJYJPT">t</span>
   </a>
 </li>
     </ul>
