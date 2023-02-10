@@ -79,7 +79,7 @@ As you can see, we’re taking in our NetworkModel and then returning and adapti
 
 ```swift
 func getUserData() async throws -> DeviceModel {
-   let response = try await fetchUser()
+   let response: NetworkModel = try await fetchUser()
    return try UserAdapter.device(from: response)
 }
 ```
