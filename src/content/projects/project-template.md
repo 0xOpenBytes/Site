@@ -4,7 +4,7 @@ author: Project Author
 pubDatetime: 2022-06-06T04:06:31Z
 postSlug: project-template
 featured: false
-draft: false
+draft: true
 tags:
   - project
   - tempalte
