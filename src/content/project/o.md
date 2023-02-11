@@ -2,7 +2,7 @@
 title: o
 author: OpenBytes
 pubDatetime: 2022-02-23T12:00:00Z
-# postSlug: o
+projectSlug: o
 featured: false
 draft: false
 tags:
