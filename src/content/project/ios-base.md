@@ -2,7 +2,7 @@
 title: iOS-base
 author: OpenBytes
 pubDatetime: 2022-12-01T12:00:00Z
-postSlug: ios-base
+projectSlug: iOS-base
 featured: false
 draft: false
 tags:
