@@ -2,7 +2,7 @@
 title: c
 author: OpenBytes
 pubDatetime: 2022-02-23T12:00:00Z
-postSlug: c
+# postSlug: project/c
 featured: false
 draft: false
 tags:

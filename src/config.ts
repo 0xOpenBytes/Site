@@ -8,7 +8,7 @@ export const SITE = {
   ogImage: "astropaper-og.jpg",
   lightAndDarkMode: true,
   postPerPage: 8,
-  projectsPerPage: 8
+  projectPerPage: 8
 };
 
 export const LOGO_IMAGE = {

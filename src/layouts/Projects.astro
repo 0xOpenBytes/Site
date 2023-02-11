@@ -12,7 +12,7 @@ import type { CollectionEntry } from "astro:content";
 export interface Props {
   pageNum: number;
   totalPages: number;
-  projects: CollectionEntry<"projects">[];
+  projects: CollectionEntry<"project">[];
 }
 
 const { pageNum, totalPages, projects } = Astro.props;

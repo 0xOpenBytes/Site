@@ -7,10 +7,10 @@ import getPageNumbers from "@utils/getPageNumbers";
 import slugify from "@utils/slugify";
 import { SITE } from "@config";
 export interface Props {
-  project: CollectionEntry<"projects">;
+  project: CollectionEntry<"project">;
 }
 export async function getStaticPaths() {
-  const projects = await getCollection("projects", ({ data }) => !data.draft);
+  const projects = await getCollection("project", ({ data }) => !data.draft);
   const postResult = projects.map(project => ({
     params: { slug: slugify(project.data) },
     props: { project },
@@ -22,7 +22,7 @@ export async function getStaticPaths() {
 }
 const { slug } = Astro.params;
 const { project } = Astro.props;
-const projects = await getCollection("projects");
+const projects = await getCollection("project");
 const sortedProjects = getSortedProjects(projects)
 const totalPages = getPageNumbers(sortedProjects.length);
 const currentPage =
