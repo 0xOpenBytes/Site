@@ -11,7 +11,7 @@ const sortedProjects =  getSortedProjects(projects)
 
 const totalPages = getPageNumbers(sortedProjects.length);
 
-const paginatedProjects = projects.slice(0, SITE.projectPerPage);
+const paginatedProjects = projects.slice(0, SITE.projectsPerPage);
 ---
 
 <Projects projects={paginatedProjects} pageNum={1} totalPages={totalPages.length} />
