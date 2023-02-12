@@ -19,5 +19,3 @@ As noted, we welcome anyone of various experience levels to share what they know
 Don't be worried if this all sounds like a lot, we're here to help! Join our [Discord](https://discord.gg/HUmaDXVsW7) and we'll help answer any questions you may have.
 
 ## Current Members
-
-_Coming Soon_
