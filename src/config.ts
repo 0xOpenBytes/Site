@@ -5,7 +5,7 @@ export const SITE = {
   author: "OpenBytes",
   desc: "OpenBytes is a small group of passionate open source developers who come together to collaborate on projects and share their knowledge.",
   title: "0xOpenBytes",
-  ogImage: "astropaper-og.jpg",
+  ogImage: "openbytes-og.png",
   lightAndDarkMode: true,
   postPerPage: 8,
   projectPerPage: 8
