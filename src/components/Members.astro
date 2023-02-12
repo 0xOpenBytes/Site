@@ -1,0 +1,16 @@
+---
+import Hr from "./Hr.astro";
+
+const members = [ 
+    "8268288",
+    "47156971",
+    "103295874",
+    "7420011"
+]
+
+const url = "https://avatars.githubusercontent.com/u/${members}?v=4"
+---
+
+<div id="about" class="mb-28 max-w-3xl">
+    { members.map((members) => <img class="w-32 rounded-full display: inline p-4" src={`https://avatars.githubusercontent.com/u/${members}?v=4`}/>) }
+</div>
