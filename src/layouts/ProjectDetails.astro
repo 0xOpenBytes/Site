@@ -5,10 +5,13 @@ import Footer from "@components/Footer.astro";
 import Tag from "@components/Tag.astro";
 import Datetime from "@components/Datetime";
 import type { CollectionEntry } from "astro:content";
+import { TelemetryDeck } from "@telemetrydeck/sdk";
 
 export interface Props {
   project: CollectionEntry<"project">;
 }
+
+const td = new TelemetryDeck({ app: "APP_ID_HERE", user: "anonymous" });
 
 const { project } = Astro.props;
 
@@ -45,6 +48,7 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.svg`, Astro.url.origin)
     <ul class="tags-container">
       {tags.map(tag => <Tag name={tag} />)}
     </ul>
+    {td.signal()}
   </main>
   <Footer />
 </Layout>
