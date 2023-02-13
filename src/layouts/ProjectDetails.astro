@@ -45,17 +45,6 @@ const ogUrl = new URL(ogImage ? ogImage : `${title}.svg`, Astro.url.origin)
     <ul class="tags-container">
       {tags.map(tag => <Tag name={tag} />)}
     </ul>
-
-    <script>
-      import { TelemetryDeck } from "@telemetrydeck/sdk";
-
-      const td = new TelemetryDeck({
-        app: import.meta.env.TELEMETRYDECK_APP_ID,
-        user: "anonymous",
-      });
-
-      td.signal();
-    </script>
   </main>
   <Footer />
 </Layout>
