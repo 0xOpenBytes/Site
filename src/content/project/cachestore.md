@@ -155,6 +155,8 @@ struct ContentView: View {
 ```
 
 </details>
+  
+<br/>
 
 <details> 
   <summary>Testing</summary> 
@@ -208,7 +210,8 @@ class CacheStoreDemoTests: XCTestCase {
 ```
 
 </details>
-***
+  
+<br/>
 
 ### [Visit the Github Repo](https://github.com/0xOpenBytes/cachestore)
 <br/>
