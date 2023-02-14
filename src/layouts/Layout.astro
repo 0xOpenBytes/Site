@@ -1,6 +1,5 @@
 ---
 import { SITE } from "@config";
-import { TelemetryDeck } from "@telemetrydeck/sdk";
 import "../styles/base.css";
 
 const googleSiteVerification = import.meta.env.PUBLIC_GOOGLE_SITE_VERIFICATION;
@@ -89,19 +88,16 @@ const fallbackImageURL = new URL(SITE.ogImage, Astro.url.origin).href;
       defer
     ></script>
 
-    <script client:only>
-      function signalTelemetryDeck() {
-        const TELEMETRYDECK_APP_ID = process.env.TELEMETRYDECK_APP_ID;
-        window.td = window.td || [];
-        td.push(
-          ["app", TELEMETRYDECK_APP_ID],
-          ["user", "anonymous"],
-          ["signal"]
-        );
-      }
+    <script client:only type="module">
+      window.td = window.td || [];
+      td.push(
+        ["app", import.meta.env.TELEMETRYDECK_APP_ID],
+        ["user", "anonymous"],
+        ["signal"]
+      );
     </script>
   </head>
-  <body onload="signalTelemetryDeck()">
+  <body>
     <slot />
   </body>
 </html>
