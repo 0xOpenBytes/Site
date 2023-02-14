@@ -88,21 +88,20 @@ const fallbackImageURL = new URL(SITE.ogImage, Astro.url.origin).href;
       src="https://unpkg.com/@telemetrydeck/sdk/dist/telemetrydeck.min.js"
       defer
     ></script>
-    <script>
-      // This will send a TelemetrDeck signal of type "pageLoad" every time the page loads
-      // It will automatically include the current URL in the payload, as well as the user
-      // agent string, platform, and locale.
-      window.td = window.td || [];
-      td.push(
-        ["app", import.meta.env.TELEMETRYDECK_APP_ID],
-        ["user", "anonymous"],
-        ["signal"]
-      );
 
-      console.log("HEllo TD");
+    <script client:only>
+      function signalTelemetryDeck() {
+        const TELEMETRYDECK_APP_ID = process.env.TELEMETRYDECK_APP_ID;
+        window.td = window.td || [];
+        td.push(
+          ["app", TELEMETRYDECK_APP_ID],
+          ["user", "anonymous"],
+          ["signal"]
+        );
+      }
     </script>
   </head>
-  <body>
+  <body onload="signalTelemetryDeck()">
     <slot />
   </body>
 </html>
