@@ -19,7 +19,7 @@ The users experience is extremely important, and in my opinion there's nothing w
 
 ## We're working here!
 
-Progress indicators help your users know that your app hasn't stalled out rather it is in a loading state working behind the scenes while it performs some sort of operation. There are two types of progress indicators that we can use, and it is based on whether or not we know the duration of an operation.
+Progress indicators help your users know that your app hasn't stalled out, rather it is in a loading state working behind the scenes while it performs some sort of operation. There are two types of progress indicators that we can use, and it is based on whether or not we know the duration of an operation.
 
 - _Determinate_, used with tasks with a well-defined duration.
 - _Indeterminate_, for unquantifiable tasks such as loading or syncing data.
