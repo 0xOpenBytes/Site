@@ -137,7 +137,7 @@
 <span class="line"><span style="color: #ABB2BF">  }</span></span>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre>
 <p>The above code displays a clean and simple loading spinner.
-<img src="/public/assets/posts/images/progressview/progressviewspinner.gif" alt="Basic SwiftUI ProgressView spinner." width="35%"></p>
+<img src="/assets/posts/images/progressview/progressviewspinner.gif" alt="Basic SwiftUI ProgressView spinner." width="35%"></p>
 <h2 id="lets-get-linear">Lets get linear</h2>
 <p>We can add a little bit of flair by changing the default <code>ProgressView()</code> style to <code>LinearProgressViewStyle()</code> by adding the value parameter which accepts a <code>Float</code>.</p>
 <pre is:raw="" class="astro-code" style="background-color: #282c34; overflow-x: auto; white-space: pre-wrap; word-wrap: break-word;"><code><span class="line"><span style="color: #C678DD">struct</span><span style="color: #ABB2BF"> </span><span style="color: #E5C07B">ContentView</span><span style="color: #ABB2BF">: View {</span></span>
@@ -145,11 +145,11 @@
 <span class="line"><span style="color: #ABB2BF">    </span><span style="color: #61AFEF">ProgressView</span><span style="color: #ABB2BF">(</span><span style="color: #61AFEF">value</span><span style="color: #ABB2BF">: </span><span style="color: #D19A66">1.0</span><span style="color: #ABB2BF">)</span></span>
 <span class="line"><span style="color: #ABB2BF">  }</span></span>
 <span class="line"><span style="color: #ABB2BF">}</span></span></code></pre>
-<img src="/public/assets/posts/images/progressview/linearprogressview.gif" alt="Basic SwiftUI ProgressView linear example." width="35%">
+<img src="/assets/posts/images/progressview/linearprogressview.gif" alt="Basic SwiftUI ProgressView linear example." width="35%">
 <p>This code will display a filled linear progress view. Animating the view on change appeared a bit tricky to me, so I did what any good developer does… Googles the crap out of an issue and lands on <a href="https://stackoverflow.com/a/67135277/14128044">Stack Overflow.</a> to fix the problem. A bit of that code, leads us to this beautiful animated linear progress view.</p>
 <h2 id="when-should-i-use-progressview">When should I use ProgressView?</h2>
 <p>Real life examples are the best learning tool, and recently I had the chance to learn that lesson. In this view, a user is displayed the current response time for the servers however, while the data is loading I unfortunately am showing <code>-99</code> which is my optional string return. What should be showed here is progress view spinners rather then what is.</p>
-<img src="/public/assets/posts/images/progressview/spinnerexample.png" alt="Image showing a vertical line of progress view spinners">
+<img src="/assets/posts/images/progressview/spinnerexample.png" alt="Image showing a vertical line of progress view spinners">
 <h2 id="apple-recommended-best-practices-say-what">Apple recommended best practices? Say what!?</h2>
 <ul>
 <li><strong>When possible, use a determinate progress indicator.</strong> An indeterminate progress indicator shows that a process is occurring, but it doesn’t help people estimate how long a task will take. A determinate progress indicator can help people decide whether to do something else while waiting for the task to complete, restart the task at a different time, or abandon the task.</li>
