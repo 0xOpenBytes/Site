@@ -39,7 +39,7 @@ struct ContentView: View {
 ```
 
 The above code displays a clean and simple loading spinner.
-<img src="/public/assets/posts/images/progressview/progressviewspinner.gif" alt="Basic SwiftUI ProgressView spinner." width="35%"/>
+<img src="/assets/posts/images/progressview/progressviewspinner.gif" alt="Basic SwiftUI ProgressView spinner." width="35%"/>
 
 ## Lets get linear
 
@@ -53,7 +53,7 @@ struct ContentView: View {
 }
 ```
 
-<img src="/public/assets/posts/images/progressview/linearprogressview.gif" alt="Basic SwiftUI ProgressView linear example." width="35%"/>
+<img src="/assets/posts/images/progressview/linearprogressview.gif" alt="Basic SwiftUI ProgressView linear example." width="35%"/>
 
 This code will display a filled linear progress view. Animating the view on change appeared a bit tricky to me, so I did what any good developer does... Googles the crap out of an issue and lands on <a href="https://stackoverflow.com/a/67135277/14128044">Stack Overflow.</a> to fix the problem. A bit of that code, leads us to this beautiful animated linear progress view.
 
@@ -61,7 +61,7 @@ This code will display a filled linear progress view. Animating the view on chan
 
 Real life examples are the best learning tool, and recently I had the chance to learn that lesson. In this view, a user is displayed the current response time for the servers however, while the data is loading I unfortunately am showing `-99` which is my optional string return. What should be showed here is progress view spinners rather then what is.
 
-<img src="/public/assets/posts/images/progressview/spinnerexample.png" alt="Image showing a vertical line of progress view spinners"/>
+<img src="/assets/posts/images/progressview/spinnerexample.png" alt="Image showing a vertical line of progress view spinners"/>
 
 ## Apple recommended best practices? Say what!?
 
