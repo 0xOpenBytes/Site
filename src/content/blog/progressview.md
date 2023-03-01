@@ -15,7 +15,7 @@ description: Your users experience is important, and it's better to show somethi
 
 The users experience is extremely important, and in my opinion there's nothing worse then trying to interact with what seems like a frozen application. So what can we do to fix that awkward stage between displaying content to our users, and the loading state while our application is processing our requests? Progress indicators!
 
-<img src="/public/assets/posts/images/progressview/loadingimage.jpg" alt="Loading image from Unsplash." width="50%"/>
+<img src="/assets/posts/images/progressview/loadingimage.jpg" alt="Loading image from Unsplash." width="50%"/>
 
 ## We're working here!
 
