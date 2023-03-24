@@ -1,26 +1,29 @@
 ---
-
 export interface Member {
-    id: string
-    url: string
+  id: string;
+  url: string;
 }
 
-export type MemberList = Array<Member>
+export type MemberList = Array<Member>;
 
-const members: MemberList = [ 
-    { id: "8268288", url: "https://github.com/0xLeif"},
-    { id: "47156971", url: "https://github.com/haIIux"},
-    { id: "103295874", url: "https://github.com/fullqueuedeveloper"},
-    { id: "7420011", url: "https://github.com/parshav"}
-]
+const members: MemberList = [
+  { id: "8268288", url: "https://github.com/0xLeif" },
+  { id: "47156971", url: "https://github.com/haIIux" },
+  { id: "103295874", url: "https://github.com/fullqueuedeveloper" },
+  { id: "7420011", url: "https://github.com/parshav" },
+  { id: "22206851", url: "https://github.com/devahmedshendy" },
+];
 ---
-<div id="about" class="mb-28 max-w-3xl grid grid-cols-4 gap-3">
-    { 
-        members.map(
-            (members) => 
-            <a href={members.url} target="_blank">
-                <img class="w-36 rounded-full" src={`https://avatars.githubusercontent.com/u/${members.id}?v=4`}/>
-            </a>
-        ) 
-    }
+
+<div id="about" class="mb-28 grid max-w-3xl grid-cols-4 gap-3">
+  {
+    members.map(members => (
+      <a href={members.url} target="_blank">
+        <img
+          class="w-36 rounded-full"
+          src={`https://avatars.githubusercontent.com/u/${members.id}?v=4`}
+        />
+      </a>
+    ))
+  }
 </div>
