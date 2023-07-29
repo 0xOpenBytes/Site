@@ -90,6 +90,10 @@ const fallbackImageURL = new URL(SITE.ogImage, Astro.url.origin).href;
     }
 
     <script is:inline src="/toggle-theme.js"></script>
+    <script
+      src="https://cdn.telemetrydeck.com/websdk/telemetrydeck.min.js"
+      data-app-id="A78D83D0-1E59-482C-9A87-7488D8837752"
+    ></script>
   </head>
   <body>
     <slot />
